@@ -1,9 +1,9 @@
-CREATE TABLE leaveLAPS (
-		leaveID VARCHAR(100) NOT NULL,
-		startDate VARCHAR(50) NOT NULL,
-		endDate VARCHAR(50) NOT NULL,
-		Category VARCHAR(50) NOT NULL,
-		reasons VARCHAR(100) NOT NULL,
-        workDissemination VARCHAR(100) NULL,
-        contactDetails VARCHAR(100) NULL,
-		PRIMARY KEY (LeaveID));
+CREATE TABLE `sa48`.`leavelaps` (
+  `leave_id` VARCHAR(45) NOT NULL,
+  `start_date` VARCHAR(45) NOT NULL,
+  `end_date` VARCHAR(45) NOT NULL,
+  `category` VARCHAR(45) NOT NULL,
+  `reasons` VARCHAR(45) NOT NULL,
+  `work_dissemination` VARCHAR(45) NULL,
+  `contact_details` VARCHAR(45) NULL,
+  PRIMARY KEY (`leave_id`));

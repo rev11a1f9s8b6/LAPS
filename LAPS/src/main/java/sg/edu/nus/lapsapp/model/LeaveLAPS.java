@@ -1,32 +1,32 @@
 package sg.edu.nus.lapsapp.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.validator.constraints.Length;
 
 @Entity
-public class Leave {
+public class LeaveLAPS {
 	
 	@Id
+	@NotNull
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "system-uuid")
 	@GenericGenerator(name = "system-uuid", strategy = "uuid2")
-	@Column(name="leaveID")
+	@Length(max=20)
 	private String leaveID;
-	@Column(name="startDate")
+	@NotNull
 	private String startDate;
-	@Column(name="endDate")
+	@NotNull
 	private String endDate;
-	@Column(name="Category")
+	@NotNull
 	private String Category;
-	@Column(name="reasons")
+	@NotNull
 	private String reasons;
-	@Column(name="workDissemination")
 	private String workDissemination;
-	@Column(name="contactDetails")
 	private String contactDetails;
 	public String getStartDate() {
 		return startDate;
@@ -64,11 +64,11 @@ public class Leave {
 	public void setContactDetails(String contactDetails) {
 		this.contactDetails = contactDetails;
 	}
-	public Leave() {
+	public LeaveLAPS() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Leave(String startDate, String endDate, String category, String reasons, String workDissemination,
+	public LeaveLAPS(String startDate, String endDate, String category, String reasons, String workDissemination,
 			String contactDetails) {
 		super();
 		this.startDate = startDate;

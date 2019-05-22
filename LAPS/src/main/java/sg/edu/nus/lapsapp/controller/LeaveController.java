@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import sg.edu.nus.lapsapp.model.Leave;
+import sg.edu.nus.lapsapp.model.LeaveLAPS;
 import sg.edu.nus.lapsapp.repo.LeaveRepo;
 
 
@@ -23,24 +23,22 @@ public class LeaveController {
 	public void setLeaveRepo(LeaveRepo leaveRepo) {
 		this.leaveRepo = leaveRepo;
 	}
-	public void something() {
-		//blah blah;
-	}
+
 	@RequestMapping(path = "/")
     public String index() {
         return "index";
 	}
 	
 	//Creating new leave entry
-	@RequestMapping(path = "/leave/add", method = RequestMethod.GET)
+	@RequestMapping(path = "/leave/add", method = RequestMethod.POST)
 	public String createLeave(Model model) {
-		model.addAttribute("leave", new Leave());
+		model.addAttribute("leave", new LeaveLAPS());
 	    return "LeaveForm";
 	    }
     
 	//After keying in
-    @RequestMapping(path = "/products", method = RequestMethod.POST)
-    public String saveProduct(@Valid Leave leave, BindingResult bindingResult) {
+    @RequestMapping(path = "/leave/add", method = RequestMethod.GET)
+    public String saveProduct(@Valid LeaveLAPS leave, BindingResult bindingResult) {
     	if (bindingResult.hasErrors()) {
             return "LeaveForm";
         }
