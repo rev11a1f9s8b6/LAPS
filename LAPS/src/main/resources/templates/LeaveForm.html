@@ -2,26 +2,26 @@
 <html xmlns:th="http://thymeLeaf.org">
 <body>
 <h2>View Personal leaveLAPS History</h2>
-<<form th:object="${leaveLAPS}" th:action="@{/LeaveForm}" method="post">
+<form th:object="${leaveLAPS}" th:action="@{/LeaveForm}" method="post">
 		<fieldset>
-			Start date: <input type="text" th:field="*{leaveLAPS.startDate}" >
-			<p th:if="${#fields.hasErrors('startDate')}" th:errors="*{leaveLAPS.startDate}">Please key in start date.</p>
+			Start date: <input type="text" th:field="*{startDate}" >
+			<p th:if="${#fields.hasErrors('startDate')}" th:errors="*{startDate}">Please key in start date.</p>
 		</fieldset>
 		<fieldset>
-			Description: <input type="text" th:field="*{leaveLAPS.description}">
-			<p th:if="${#fields.hasErrors('description')}" th:errors="*{leaveLAPS.description}">Please key in end date.</p>
+			Description: <input type="text" th:field="*{endDate}">
+			<p th:if="${#fields.hasErrors('endDate')}" th:errors="*{endDate}">Please key in end date.</p>
 		</fieldset>
 		<fieldset>
-			Type: <input type="text" th:field="*{leaveLAPS.Category}"><!-- Drop down -->
-			<p th:if="${#fields.hasErrors('Category')}" th:errors="*{leaveLAPS.Category}">Incorrect category entered.</p>
+			Type: <input type="text" th:field="*{Category}"><!-- Drop down -->
+			<p th:if="${#fields.hasErrors('Category')}" th:errors="*{Category}">Incorrect category entered.</p>
 		</fieldset>
 		<fieldset>
-			Category: <input type="text" th:field="*{leaveLAPS.workDissemination}">
-			<p th:if="${#fields.hasErrors('workDissemination')}" th:errors="*{leaveLAPS.workDissemination}"></p>
+			Category: <input type="text" th:field="*{workDissemination}">
+			<p th:if="${#fields.hasErrors('workDissemination')}" th:errors="*{workDissemination}"></p>
 		</fieldset>
 		<fieldset>
-			Category: <input type="text" th:field="*{leaveLAPS.contactDetails}">
-			<p th:if="${#fields.hasErrors('contactDetails')}" th:errors="*{leaveLAPS.contactDetails}"></p>
+			Category: <input type="text" th:field="*{contactDetails}">
+			<p th:if="${#fields.hasErrors('contactDetails')}" th:errors="*{contactDetails}"></p>
 		</fieldset>
 		<fieldset>
 			<button type="submit">Save</button>
