@@ -23,7 +23,9 @@ public class LeaveController {
 	public void setLeaveRepo(LeaveRepo leaveRepo) {
 		this.leaveRepo = leaveRepo;
 	}
-	
+	public void something() {
+		//blah blah;
+	}
 	@RequestMapping(path = "/")
     public String index() {
         return "index";
