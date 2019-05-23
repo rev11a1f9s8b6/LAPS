@@ -46,6 +46,17 @@ public class LeaveController {
         return "Leave-Application-History";
     }
     
+    // Delete
+    @RequestMapping(path = "/leave/{id}", method = RequestMethod.DELETE)
+    public String deleteLeave(@PathVariable(name = "id") String id) {
+    	leaveRepo.deleteById(id);
+    	
+    	return "Leave-Application-History";
+    }
+    
+    
+    
+    
     
 	
         
